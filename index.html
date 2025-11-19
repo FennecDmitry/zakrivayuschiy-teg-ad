@@ -149,7 +149,7 @@
         <h2 class="article_title">2 спринт: Погоня за идеалом</h2>
         <div class="article_image_box">
           <span class="card_label">&lt;desigions&gt;</span>
-          <img src="./images/m6.png" class="article_image filter_hue-rotate"
+          <img src="./images/m6.png" class="article_image filter_sepia"
             alt="состаренный автобус" />
         </div>
         <div class="article_info">
@@ -231,7 +231,7 @@
         <h2 class="article_title">3 спринт: Обходные стратегии</h2>
         <div class="article_image_box">
           <span class="card_label">&lt;support&gt;</span>
-          <img src="./images/eight.png" class="article_image filter_invert"
+          <img src="./images/eight.png" class="article_image filter_grayscale"
             alt="испорченный автобус" />
         </div>
         <div class="article_info">
@@ -311,7 +311,7 @@
         <h2 class="article_title">«Сейчас я здесь»</h2>
         <div class="article_image_box">
           <span class="card_label">&lt;experience&gt;</span>
-          <img src="./images/tenh.png" class="article_image filter_blur"
+          <img src="./images/tenh.png" class="article_image filter_multy"
             alt="ночной автобус." />
         </div>
         <div class="article_info">
@@ -352,7 +352,7 @@
       <button
         class="save_button decorated_button"
         type="button"
-        onclick="window['floppy_dialog'].showModal()"
+        id="save_button"
         aria-controls="floppy_dialog"
       >
         <svg
@@ -362,7 +362,7 @@
         >
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
-        <span class="decorated_button_text">Сохранить на</span>
+        <span class="decorated_button_text">Сохранить на память</span>
       </button>
 
     </main>
@@ -391,6 +391,7 @@
 
 
     <script src="./scripts/like.js"></script>
+    <script src="./scripts/dialog.js"></script>
   </body>
 </html>
 
