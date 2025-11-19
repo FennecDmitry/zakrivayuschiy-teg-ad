@@ -9,7 +9,10 @@
   --accent-color: #00CC14;
   --card-title-fw: 785;
   --card-text-fw: 465;
-  --bg-image: url(../svg/pattern-dark.svg);
+  --bg-image: 
+    repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #007f0c 0%, #004306 100%);
   --contour-color: var(--accent-color);
 }
 
@@ -18,7 +21,10 @@
   --accent-color: #000;
   --card-title-fw: 700;
   --card-text-fw: 400;
-  --bg-image: url(../svg/pattern-light.svg);
+  --bg-image: 
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
   --contour-color: var(--accent-color);
 }
 
@@ -28,7 +34,10 @@
     --accent-color: #00CC14;
     --card-title-fw: 785;
     --card-text-fw: 465;
-    --bg-image: url(../svg/pattern-dark.svg);
+    --bg-image: 
+      repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
+      linear-gradient(180deg, #007f0c 0%, #004306 100%);
     --contour-color: var(--accent-color);
   }
 }
