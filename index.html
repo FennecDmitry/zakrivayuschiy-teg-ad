@@ -368,26 +368,26 @@
     </main>
 
       
-      <dialog id="floppy_dialog" class="floppy_dialog">
-        <div class="dialog_description">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 44 44"
-            class="dialog_floppy_svg"
-          >
-            <use href="./svg/floppy.svg#floppy"></use>
-          </svg>
-          <p class="dialog_label">Вставьте дискету, чтобы продолжить</p>
-        </div>
-        <form  method="dialog">
-          <button 
-            type="submit"
-            class="dialog_button decorated_button"
-          >
-            <span class="decorated_button_text">OK</span>
-          </button>
-        </form>
-      </dialog>
+<dialog id="floppy_dialog" class="floppy_dialog">
+  <div class="dialog_description">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 44 44"
+      class="dialog_floppy_svg"
+    >
+      <use href="./svg/floppy.svg#floppy"></use>
+    </svg>
+    <p class="dialog_label">Вставьте дискету, чтобы продолжить</p>
+  </div>
+
+  <button 
+    type="button"
+    class="dialog_button decorated_button"
+    id="dialog_close_button"
+  >
+    <span class="decorated_button_text">OK</span>
+  </button>
+</dialog>
 
 
     <script src="./scripts/like.js"></script>
