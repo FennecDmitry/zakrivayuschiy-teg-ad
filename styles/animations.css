@@ -1,8 +1,6 @@
 /* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -10,116 +8,86 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
-
-.contour {
-  transition: fill 0.1s linear;
+@keyframes like {
+    from {
+      scale: 1;
+    }
+    to {
+      scale: 1.25;
+    }
 }
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--filling-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:active .core {
-  fill: var(--filling-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--filling-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--filling-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--filling-color);
-  transition: fill 0.3s linear;
-}
-
-.is-liked .heart {
-  animation-name: heart;
-  animation-delay: 0.1s;
-  animation-duration: 0.3s;
-  animation-direction: normal;
-  transform-origin: center;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-}
-
-.is-liked .sparks {
-  animation-name: sparks;
-  animation-delay: 0.3s;
-  animation-duration: 0.3s;
-  animation-direction: normal;
-  transform-origin: center;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-}
-
-@keyframes pointer {
-  0% {
-    inset-inline-start: -20px;
-  }
-
-  100% {
-    inset-inline-start: -16px;
-  }
-}
-
-@keyframes heart {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
+  
 @keyframes sparks {
-  0% {
-    opacity: 0;
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+/* Переход в исходное состояние */
+.card__icon-button .core {
+    fill: transparent;
+    transition: fill var(--time_step) ease 0.03s;
+}
+
+.button_heart .main-body {
+    fill: transparent;
+    transition: fill var(--time_step) ease 0s;
   }
 
-  50% {
-    opacity: 1;
-  }
+/* hover, active */
+.card__icon-button:hover .core {
+    fill: var(--heart-contour-color);
+    transition: fill var(--time_step) ease;
+}
 
-  100% {
-    opacity: 0;
-  }
+.card__icon-button:hover .main-body {
+    fill: var(--heart-contour-color);
+    transition: fill var(--time_step) ease 0.05s;
+}
+
+.card__icon-button:active .core {
+    fill: var(--heart-sparks-color);
+    transition: fill var(--time_step) ease;
+}
+
+.card__icon-button:active .main-body {
+    fill: var(--heart-sparks-color);
+    transition: fill var(--time_step) ease 0.05s;
+}
+
+
+/* Лайкнули! */
+
+.card__icon-button .is-liked .core {
+    fill: var(--heart-sparks-color);
+    transition: fill var(--time_step) linear 0s;
+}
+
+
+.card__icon-button .is-liked .main-body {
+    fill: var(--heart-sparks-color);
+    transition: fill var(--time_step) linear 0.05s;
+}
+
+.card__icon-button .is-liked .contour {
+    fill: var(--heart-sparks-color);
+    transition: fill var(--time_step) linear 0.06s;
+}
+
+.card__icon-button .is-liked {
+    animation: like  var(--time_step) ease-in 0.1s 1;
+    transform-origin: center;
+}
+  
+.card__icon-button .is-liked .sparks {
+    animation: sparks var(--time_step) ease-in var(--time_step) 1;
+}
+
+.card__icon-button:focus-visible {
+    outline-color: black;
+    transition:  outline-color var(--time_step) linear;
 }
