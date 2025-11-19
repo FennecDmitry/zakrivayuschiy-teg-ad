@@ -10,264 +10,302 @@
 
 */
 
+/* Основные стили страницы */
 .page {
   /*  min-block-size: 100dvb;*/
-    font-family: var(--main-font);
-    font-variation-settings: "wght" var(--text-weight);
-    font-size: var(--font-size);
+    font-family: var(--main-font);                    /* Основной вариативный шрифт */
+    font-variation-settings: "wght" var(--text-weight); /* Настройка веса вариативного шрифта */
+    font-size: var(--font-size);                      /* Базовый размер текста */
 
-    background-image: var(--background-image);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: var(--background-image);        /* Сложный градиентный фон */
+    background-size: cover;                           /* Фон покрывает всю область */
+    background-position: center;                      /* Центрирование фона */
+    background-attachment: fixed;                     /* Фиксированный фон при скролле */
 
   /*  max-inline-size: 700px;*/
-    margin: auto;
+    margin: auto;                                     /* Центрирование страницы */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;                              /* Центрирование по горизонтали */
 }
 
+/* Общие стили для основных блоков */
 .main,
 .header {
-  width: var(--page-width);
+  width: var(--page-width);                           /* Резиновая ширина контента */
 }
 
+/* Стили шапки сайта */
 .header {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font);                    /* Акцентный пиксельный шрифт */
   font-weight: var(--text-weight);
-  text-transform: uppercase;
+  text-transform: uppercase;                          /* Все буквы заглавные */
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  outline: 2px solid var(--color);
-  background-color: var(--background-color);
-  padding-block: 128px;
-  margin-block: 103px;
+  flex-direction: column;                             /* Вертикальное расположение */
+  outline: 2px solid var(--color);                    /* Граница акцентным цветом */
+  background-color: var(--background-color);          /* Фон карточек */
+  padding-block: 128px;                               /* Внутренние отступы сверху/снизу */
+  margin-block: 103px;                                /* Внешние отступы сверху/снизу */
 }
 /*
 .header_size {
   width: clamp(var(--content-size));
 }*/
 
+/* Заголовок шапки */
 .header_title {
-  font-size: var(--header-title-font-size);
+  font-size: var(--header-title-font-size);           /* Резиновый размер заголовка */
   font-weight: var(--text-weight);
-  line-height: 100%;
-  margin-block-end: 20px;
+  line-height: 100%;                                  /* Плотный межстрочный интервал */
+  margin-block-end: 20px;                             /* Отступ снизу */
 }
 
+/* Подзаголовок шапки */
 .header_subtitle {
-  font-size: var(--header-subtitle-font-size);
+  font-size: var(--header-subtitle-font-size);        /* Резиновый размер подзаголовка */
 }
 
+/* Основной контент */
 .main {
   display: grid;
  /* row-gap: 54px;*/
-  margin-block-end: 100px;
-  justify-items: center;
+  margin-block-end: 100px;                            /* Отступ снизу */
+  justify-items: center;                              /* Центрирование элементов */
 }
 
+/* Список карточек */
 .card_list {
   display: grid;
-  gap: 50px;
+  gap: 50px;                                          /* Расстояние между карточками */
   width: 100%;
 }
 
+/* Отдельная карточка */
 .card_item {
   display: grid;
-  border: var(--main-border);
-  background-color: white;
+  border: var(--main-border);                         /* Основная граница */
+  background-color: white;                            /* Белый фон карточки */
 }
 
+/* Статья (карточка) */
 .article {
-  outline: 2px solid var(--color);
+  outline: 2px solid var(--color);                    /* Граница акцентным цветом */
   width: 100%;
 /*  width: clamp(var(--content-size));*/
-  background-color: white;
-  margin-bottom: 54px;
+  background-color: white;                            /* Белый фон */
+  margin-bottom: 54px;                                /* Отступ между карточками */
 }
 
+/* Убираем отступ у последней карточки */
 .article:last-of-type {
   margin-bottom: 52px;
 }
 
+/* Заголовок карточки */
 .article_title {
-  padding: 5px 10px;
-  font-variation-settings: "wght" var(--title-weight);
-  color: var(--color);
-  background-color: var(--background-color);
-  font-size: var(--font-size);
+  padding: 5px 10px;                                  /* Внутренние отступы */
+  font-variation-settings: "wght" var(--title-weight); /* Утолщенный шрифт для заголовков */
+  color: var(--color);                                /* Цвет текста */
+  background-color: var(--background-color);          /* Фон заголовка */
+  font-size: var(--font-size);                        /* Размер шрифта */
 }
 
+/* Контейнер для изображения карточки */
 .article_image_box {
-  position: relative;
-  margin: 0px 0px 5px 0px;
-  outline: var(--main-border);
+  position: relative;                                 /* Для позиционирования лейбла */
+  margin: 0px 0px 5px 0px;                            /* Отступы */
+  outline: var(--main-border);                        /* Граница */
 }
 
+/* Лейбл на изображении */
 .card_label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  font-family: var(--accent-font);
+  position: absolute;                                 /* Абсолютное позиционирование */
+  top: 25px;                                          /* Отступ сверху */
+  right: 25px;                                        /* Отступ справа */
+  font-family: var(--accent-font);                    /* Акцентный шрифт */
   font-weight: var(--text-weight);
-  font-size: var(--font-size-card-label);
-  text-shadow: 0 0 1px var(--shadow-color);
-/*  -webkit-text-stroke: 1px var(--shadow-color);*/
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
-  z-index: 1;
+  font-size: var(--font-size-card-label);             /* Меньший размер шрифта */
+  text-shadow: 0 0 1px var(--shadow-color);          /* Тень текста как фолбэк */
+/*  -webkit-text-stroke: 1px var(--shadow-color);*/   /* Обводка текста (закомментирована) */
+  mix-blend-mode: hard-light;                         /* Режим смешивания с фоном */
+  opacity: 0.5;                                       /* Полупрозрачность */
+  z-index: 1;                                         /* Поверх изображения */
 }
 
+/* Информационный блок карточки */
 .article_info {
-  padding: 24px 24px 25px 26px;
-  background-color: var(--background-color);
+  padding: 24px 24px 25px 26px;                       /* Внутренние отступы */
+  background-color: var(--background-color);          /* Фон */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;                             /* Вертикальное расположение */
 }
 
+/* Отступы между параграфами текста */
 .article_text:not(:last-of-type) {
-  margin-block-end: 27px;
+  margin-block-end: 27px;                             /* Отступ у всех кроме последнего */
 }
 
 .article_text:last-of-type {
-  margin-block-end: 25px;
+  margin-block-end: 25px;                             /* Отступ у последнего параграфа */
 }
 
+/* ===== CSS-ФИЛЬТРЫ ДЛЯ ИЗОБРАЖЕНИЙ ===== */
+
+/* Увеличение яркости */
 .filter_brightness {
-  filter: brightness(110%);
+  filter: brightness(110%);                           /* +10% яркости */
 }
 
+/* Легкая прозрачность */
 .filter_opacity {
-  filter: opacity(0.9);
+  filter: opacity(0.9);                               /* 90% непрозрачности */
 }
 
+/* Сдвиг цветового тона */
 .filter_hue-rotate {
-  filter: hue-rotate(-10deg);
+  filter: hue-rotate(-10deg);                         /* Сдвиг на -10 градусов */
 }
 
+/* Эффект состаренности */
 .filter_sepia {
-  filter: sepia(95%);
+  filter: sepia(0.4) brightness(1.15) saturate(1.2);  /* Сепия + яркость + насыщенность */
 }
 
+/* Частичная инверсия цветов */
 .filter_invert {
-  filter: invert(0.10);
+  filter: invert(0.10);                               /* 10% инверсии */
 }
 
+/* Черно-белый эффект с сепией */
 .filter_grayscale {
-  filter: grayscale(1.0);
+  filter: sepia(0.3) grayscale(0.4);                  /* Сепия + частичная черно-белость */
 }
 
+/* Легкое размытие */
 .filter_blur {
-  filter: blur(0.02rem);
+  filter: blur(0.02rem);                              /* Минимальное размытие */
 }
 
+/* Множественный фильтр - нежно-красный оттенок */
 .filter_multy {
-  filter: sepia(1) hue-rotate(264deg) saturate(289%);
+  filter: hue-rotate(350deg) saturate(1.1) brightness(0.9); /* Красный оттенок + насыщенность + тусклость */
 /*
   grayscale(1.0) invert(0.95) blur(0.01rem) hue-rotate(300deg) ;
 */
 }
 
+/* Искры сердца - изначально невидимы */
 .sparks {
   opacity: 0;
 }
 
+/* Блок кнопок в карточке */
 .button_block {
   display: flex;
-  align-self: end;
-  gap: 7px;
+  align-self: end;                                    /* Выравнивание по правому краю */
+  gap: 7px;                                           /* Расстояние между кнопками */
 }
 
+/* Иконка дискеты в кнопке */
 .floppy_svg {
   width: 24px;
   height: 24px;
 }
 
+/* Иконка дискеты в модальном окне */
 .dialog_floppy_svg {
   width: 50px;
   height: 50px;
 }
 
+/* Кнопка Like */
 .card__like-button {
-  padding-block: 8px;
-  align-self: end;
-  width: 130px;
+  padding-block: 8px;                                 /* Вертикальные отступы */
+  align-self: end;                                    /* Выравнивание по правому краю */
+  width: 130px;                                       /* Фиксированная ширина */
 }
 
+/* Кнопка-обертка для иконки сердца */
 .card__icon-button {
-  height: 34px;
+  height: 34px;                                       /* Фиксированная высота */
   display: flex;
-  background-color: transparent;
-  border: none;
-  outline: 2px solid transparent;
-  transition: outline 0.3s ease;
-  align-self: center;
-  padding-inline: 0;
+  background-color: transparent;                      /* Прозрачный фон */
+  border: none;                                       /* Без границы */
+  outline: 2px solid transparent;                     /* Прозрачная обводка для анимации */
+  transition: outline 0.3s ease;                      /* Плавное изменение обводки */
+  align-self: center;                                 /* Центрирование по вертикали */
+  padding-inline: 0;                                  /* Без горизонтальных отступов */
 }
 
+/* Элементы с режимом смешивания difference */
 .mix_difference {
-  fill: white;
-  color: #fff;
-  background-color: transparent;
-  mix-blend-mode: difference;
+  fill: white;                                        /* Белая заливка SVG */
+  color: #fff;                                        /* Белый цвет текста */
+  background-color: transparent;                      /* Прозрачный фон */
+  mix-blend-mode: difference;                         /* Режим смешивания для инверсии */
 }
 
+/* Стили декорированных кнопок */
 .decorated_button {
     align-items: center;
-    background-color: white;
-    border: 2px solid var(--color);
-    color: white;
-    cursor: pointer;
-    font-family: var(--accent-font);
+    background-color: white;                          /* Белый фон */
+    border: 2px solid var(--color);                   /* Граница акцентным цветом */
+    color: white;                                     /* Белый текст */
+    cursor: pointer;                                  /* Указатель при наведении */
+    font-family: var(--accent-font);                  /* Акцентный шрифт */
     justify-content: center;
  /*   min-inline-size: 130px;*/
-    overflow: hidden;
-    position: relative;
-    transition: box-shadow 0.3s ease;
+    overflow: hidden;                                 /* Скрытие переполнения для анимации */
+    position: relative;                               /* Для позиционирования псевдоэлемента */
+    transition: box-shadow 0.3s ease;                 /* Плавная тень */
 }
 
+/* Кнопка "Сохранить на память" */
 .save_button {
-  width: 340px;
+  width: 340px;                                       /* Ширина кнопки */
 /* height: 84px;*/
-  min-height: 55px;
+  min-height: 55px;                                   /* Минимальная высота */
 /* margin: 30px 34.5px;*/
 
   /*line-height: 90%;*/
   /*text-align: center;*/
-  gap: 4px;
+  gap: 4px;                                           /* Расстояние между элементами */
   display: flex;
   /*border: var(--main-border);*/
 }
 
+/* Текст в декорированных кнопках */
 .decorated_button_text {
-    font-size: var(--button-font-size);
-    mix-blend-mode: difference;
-    margin-right: 5px;
+    font-size: var(--button-font-size);               /* Размер шрифта кнопок */
+    mix-blend-mode: difference;                       /* Режим смешивания для инверсии */
+    margin-right: 5px;                                /* Отступ справа */
 }
 
+/* Псевдоэлемент для анимации заливки кнопки */
 .decorated_button::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: var(--color);
-  transition: translate 0.5s ease-in-out;
-  translate: -100%;
+  inset: 0;                                           /* Занимает всю область кнопки */
+  background: var(--color);                           /* Фон акцентным цветом */
+  transition: translate 0.5s ease-in-out;             /* Плавное перемещение */
+  translate: -100%;                                   /* Начальное положение слева */
 }
 
+/* Стиль фокуса для доступности */
 .decorated_button:focus-visible {
-  outline: 2px solid var(--color);
+  outline: 2px solid var(--color);                    /* Обводка акцентным цветом */
 }
 
 .decorated_button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 1px var(--color);
+  outline: none;                                      /* Убираем стандартный outline */
+  box-shadow: 2px 2px 0 1px var(--color);             /* Тень вместо outline */
 }
 
+/* Анимация заливки при наведении */
 .decorated_button:hover::before {
-  translate: 0%;
+  translate: 0%;                                      /* Перемещение на всю область */
 }
 
 
@@ -275,80 +313,87 @@
 .floppy_dialog {
 }*/
 
+/* Стили открытого модального окна */
 .floppy_dialog[open] {
   /*position: fixed;*/
  /* inset: 0;*/
  /* display: flex;*/
-  flex-shrink: 0;
-  border: var(--main-border);
-  padding: 30px;
+  flex-shrink: 0;                                     /* Запрет сжатия */
+  border: var(--main-border);                         /* Граница */
+  padding: 30px;                                      /* Внутренние отступы */
 /*  min-inline-size: 341px;*/
-  inline-size: 354px;
+  inline-size: 354px;                                 /* Ширина диалога */
 }
 
+/* Фон модального окна */
 .floppy_dialog[open]::backdrop {
-  background-color: rgb(0 0 0 / 0.75);
+  background-color: rgb(0 0 0 / 0.75);               /* Полупрозрачный черный фон */
 }
 
+/* Блокировка скролла при открытом модальном окне */
 body:has(.floppy_dialog[open]) {
   overflow: hidden;
 }
 
-
+/* Описание в модальном окне */
 .dialog_description {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  padding-bottom: 27px;
-  padding-top: 5px;
+  align-items: center;                                /* Вертикальное выравнивание */
+  gap: 18px;                                          /* Расстояние между элементами */
+  padding-bottom: 27px;                               /* Отступ снизу */
+  padding-top: 5px;                                   /* Отступ сверху */
 }
 
+/* Кнопка в модальном окне */
 .dialog_button {
-  inline-size: 100%;
+  inline-size: 100%;                                  /* Ширина 100% */
  /* min-inline-size: 255px;*/
-  min-block-size: 38px;
+  min-block-size: 38px;                               /* Минимальная высота */
 }
 
+/* Текст в модальном окне */
 .dialog_label {
-  align-self: flex-start;
-  font-family: var(--accent-font);
+  align-self: flex-start;                             /* Выравнивание по верху */
+  font-family: var(--accent-font);                    /* Акцентный шрифт */
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   text-align: left;
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
-  text-transform: uppercase;
-  width: fit-content;
+  text-transform: uppercase;                          /* Заглавные буквы */
+  width: fit-content;                                 /* Ширина по содержимому */
 }
 
+/* Изображения в карточках */
 .article_image {
   display: block;
 
-  object-fit: cover;
-  object-position: center;
-  inline-size: 100%;
-  max-block-size: 100%;
+  object-fit: cover;                                  /* Обрезка с сохранением пропорций */
+  object-position: center;                            /* Центрирование */
+  inline-size: 100%;                                  /* Ширина 100% */
+  max-block-size: 100%;                               /* Максимальная высота */
 /*
   width: 100%;
   height: 100%;
   object-fit: cover;*/
 }
 
+/* Проверка поддержки text-stroke с фолбэком на text-shadow */
 @supports (
   (text-stroke: 1px var(--shadow-color)) or
     (-webkit-text-stroke: 1px var(--shadow-color))) {
   .card_label {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--shadow-color);
-    text-stroke: 1px var(--shadow-color);
+    text-shadow: none;                                /* Отключаем тень */
+    -webkit-text-stroke: 1px var(--shadow-color);     /* Обводка для WebKit */
+    text-stroke: 1px var(--shadow-color);             /* Стандартная обводка */
   }
 }
 
-
-
+/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
 @media (width <= 375px) {
 
+  /* Растягиваем на всю ширину на мобильных */
   .main,
   .header,
   .footer {
@@ -359,16 +404,19 @@ body:has(.floppy_dialog[open]) {
     row-gap: 54px;
   }
 */
+  /* Корректировки шапки для мобильных */
   .header {
-    margin-top: 27vw;
-    margin-bottom: 28vw;
-        /* aspect-ratio: 235 / 109; */
-    block-size: 325px;
+    padding-block: 80px; /* Уменьшаем отступы в шапке */
+    margin-block: 50px; /* Уменьшаем внешние отступы */
   }
 
+  /* Адаптивный заголовок для мобильных */
   .header_title {
-    line-height: 49px;
-    letter-spacing: normal;
+    font-size: clamp(2.5rem, 1.5rem + 5vw, 3.063rem); /* Уменьшаем минимальный размер */
+    line-height: 1.1; /* Уменьшаем межстрочный интервал */
+    padding: 0 10px; /* Добавляем боковые отступы */
+    text-align: center; /* Центрируем текст */
+    word-break: break-word; /* Разрешаем перенос слов */
   }
 /*
   .header_subtitle {
@@ -376,15 +424,18 @@ body:has(.floppy_dialog[open]) {
   }
 */
 
+  /* Корректировка отступов в карточках */
   .article_info {
     padding: 20px 27px 25px 27px;
   }
 
+  /* Смещение лейбла на мобильных */
   .card_label {
     top: 20px;
     right: 10px;
   }
 
+  /* Вертикальное расположение кнопки сохранения */
   .save_button {
     flex-direction: column;
     width: 312px;
@@ -393,15 +444,15 @@ body:has(.floppy_dialog[open]) {
     gap: 4px;
   }
 
+  /* Увеличение иконки дискеты на мобильных */
   .floppy_svg {
     width: 32px;
     height: 32px;
   }
 
+  /* Корректировка отступов текста кнопки */
   .decorated_button_text {
     margin-right: 2px;
     margin-bottom: 4px;
   }
 }
-
-

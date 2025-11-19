@@ -1,31 +1,23 @@
-const saveButton = document.getElementById('save_button');
-const dialog = document.getElementById('floppy_dialog');
-const form = dialog.querySelector('form');
-const closeButton = dialog.querySelector('button[type="submit"]');
+// scripts/dialog.js
 
+// Находим кнопку "Сохранить на память" по ID
+const saveButton = document.getElementById('save_button');
+// Находим модальное окно (диалог) по ID
+const dialog = document.getElementById('floppy_dialog');
+
+// Добавляем обработчик клика на кнопку "Сохранить на память"
 saveButton.addEventListener('click', () => {
+  // Показываем модальное окно методом showModal()
+  // Этот метод активирует нативный функционал диалога
   dialog.showModal();
 });
 
-// Предотвращаем отправку формы
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  dialog.close();
-});
-
-closeButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  dialog.close();
-});
-
-// Закрытие по клику на backdrop
+// Добавляем обработчик клика на само модальное окно
 dialog.addEventListener('click', (e) => {
+  // Проверяем, был ли клик именно на backdrop (фон вокруг диалога)
+  // e.target === dialog означает, что клик был на полупрозрачном фоне, а не на содержимом диалога
   if (e.target === dialog) {
+    // Закрываем модальное окно при клике на backdrop
     dialog.close();
   }
-});
-
-// Дополнительная защита - предотвращаем любое действие по умолчанию
-dialog.addEventListener('cancel', (e) => {
-  e.preventDefault();
 });
